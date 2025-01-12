@@ -12,6 +12,8 @@
 		DDB6A8972D33706E0029B8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8962D33706E0029B8F1 /* ViewController.swift */; };
 		DDB6A89C2D3370730029B8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB6A89B2D3370730029B8F1 /* Assets.xcassets */; };
 		DDB6A89F2D3370730029B8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB6A89D2D3370730029B8F1 /* LaunchScreen.storyboard */; };
+		DDB6A8B32D3378C90029B8F1 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */; };
+		DDB6A8B62D337A1D0029B8F1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDB6A8B52D337A1D0029B8F1 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,7 @@
 		DDB6A89E2D3370730029B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB6A8A02D3370730029B8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB6A8A72D33772D0029B8F1 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB6A8B62D337A1D0029B8F1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +80,7 @@
 		DDB6A8A82D3377B30029B8F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,6 +175,9 @@
 			dependencies = (
 			);
 			name = BlackTime;
+			packageProductDependencies = (
+				DDB6A8B52D337A1D0029B8F1 /* SnapKit */,
+			);
 			productName = BlackTime;
 			productReference = DDB6A88F2D33706E0029B8F1 /* BlackTime.app */;
 			productType = "com.apple.product-type.application";
@@ -198,6 +206,9 @@
 				Base,
 			);
 			mainGroup = DDB6A8862D33706E0029B8F1;
+			packageReferences = (
+				DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DDB6A8902D33706E0029B8F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,6 +237,7 @@
 			files = (
 				DDB6A8972D33706E0029B8F1 /* ViewController.swift in Sources */,
 				DDB6A8932D33706E0029B8F1 /* AppDelegate.swift in Sources */,
+				DDB6A8B32D3378C90029B8F1 /* GenericViewController.swift in Sources */,
 				DDB6A8952D33706E0029B8F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDB6A8B52D337A1D0029B8F1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DDB6A8872D33706E0029B8F1 /* Project object */;
 }
