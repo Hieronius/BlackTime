@@ -10,7 +10,7 @@ final class AuthRootView: UIView {
 	let signInPasswordTextField = UITextField()
 
 	let signInHorizontalStackView = UIStackView()
-	let signInButtton = UIButton()
+	let signInButton = UIButton()
 	let signUpButton = UIButton()
 
 	let resetPasswordButton = UIButton()
