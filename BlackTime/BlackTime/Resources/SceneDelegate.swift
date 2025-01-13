@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		guard let window else { return }
 
-		let rootVC = AuthorisationViewController()
-		rootVC.view.backgroundColor = .blue
+		let rootVC = AuthViewController()
+		rootVC.view.backgroundColor = .green
 
 		window.rootViewController = rootVC
 		window.makeKeyAndVisible()
