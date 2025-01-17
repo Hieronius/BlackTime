@@ -83,6 +83,15 @@ private extension AuthRootView {
 
 		// MARK: Registration Screen
 
+		addSubview(signUpVerticalStackView)
+
+		signUpVerticalStackView.addArrangedSubviews([
+
+			signUpEmailTextField,
+			signUpPasswordTextField,
+			signUpRepeatPasswordTextField,
+			createButton
+		])
 
 		// MARK: Password Recovery Screen
 
@@ -134,6 +143,32 @@ private extension AuthRootView {
 
 		// MARK: Registration Screen
 
+		signUpVerticalStackView.snp.makeConstraints { make in
+
+			make.centerY.equalToSuperview()
+			make.left.equalToSuperview().offset(20)
+			make.right.equalToSuperview().offset(-20)
+		}
+
+		signUpEmailTextField.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
+
+		signUpPasswordTextField.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
+
+		signUpRepeatPasswordTextField.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
+
+		createButton.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
 
 		// MARK: Password Recovery Screen
 
@@ -183,16 +218,35 @@ private extension AuthRootView {
 
 		// MARK: Registration Screen
 
+		signUpVerticalStackView.axis = .vertical
+		signUpVerticalStackView.spacing = 8
+
+		signUpEmailTextField.backgroundColor = AppColors.secondaryColor
+		signUpEmailTextField.tintColor = AppColors.primaryColor
+		signUpEmailTextField.textColor = AppColors.primaryColor
+		signUpEmailTextField.layer.cornerRadius = 15
+		signUpEmailTextField.clipsToBounds = true
+
+		signUpPasswordTextField.backgroundColor = AppColors.secondaryColor
+		signUpPasswordTextField.tintColor = AppColors.primaryColor
+		signUpPasswordTextField.textColor = AppColors.primaryColor
+		signUpPasswordTextField.layer.cornerRadius = 15
+		signUpPasswordTextField.clipsToBounds = true
+
+		signUpRepeatPasswordTextField.backgroundColor = AppColors.secondaryColor
+		signUpRepeatPasswordTextField.tintColor = AppColors.primaryColor
+		signUpRepeatPasswordTextField.textColor = AppColors.primaryColor
+		signUpRepeatPasswordTextField.layer.cornerRadius = 15
+		signUpRepeatPasswordTextField.clipsToBounds = true
+
+		createButton.setTitleColor(AppColors.primaryColor, for: .normal)
+		createButton.backgroundColor = AppColors.actionColor
+		createButton.layer.cornerRadius = 15
+		createButton.clipsToBounds = true
 
 		// MARK: Password Recovery Screen
 
 
-
-		// setup font/color/shape here
-		// 44 height for buttons
-		// 16-20 for margins/paddings to safe area
-		// 8-12 for stack view spacing
-		// 15-22 height for text fields
 	}
 }
 
@@ -212,9 +266,26 @@ private extension AuthRootView {
 		signInPasswordTextField.rightViewMode = .whileEditing
 		signInPasswordTextField.textContentType = .oneTimeCode
 
-		// setup actions / delegates here
-
 		// MARK: Registration Screen
+
+		signUpVerticalStackView.isHidden = true
+
+		signUpEmailTextField.rightView = cleaningButton
+		signUpEmailTextField.rightViewMode = .whileEditing
+		signUpEmailTextField.textContentType = .oneTimeCode
+//		signUpEmailTextField.isHidden = true
+
+		signUpPasswordTextField.rightView = cleaningButton
+		signUpPasswordTextField.rightViewMode = .whileEditing
+		signUpPasswordTextField.textContentType = .oneTimeCode
+//		signUpPasswordTextField.isHidden = true
+
+		signUpRepeatPasswordTextField.rightView = cleaningButton
+		signUpRepeatPasswordTextField.rightViewMode = .whileEditing
+		signUpRepeatPasswordTextField.textContentType = .oneTimeCode
+//		signUpPasswordTextField.isHidden = true
+
+//		createButton.isHidden = true
 
 
 		// MARK: Password Recovery Screen
@@ -239,9 +310,15 @@ private extension AuthRootView {
 
 		resetPasswordButton.setTitle("Reset Password", for: .normal)
 
-		// setup content/names/labels/placeholders here
-
 		// MARK: Registration Screen
+
+		signUpEmailTextField.placeholder = " Email@company.com"
+
+		signUpPasswordTextField.placeholder = " Password"
+
+		signUpRepeatPasswordTextField.placeholder = "Repeat Password"
+
+		createButton.setTitle("Create", for: .normal)
 
 
 		// MARK: Password Recovery Screen
