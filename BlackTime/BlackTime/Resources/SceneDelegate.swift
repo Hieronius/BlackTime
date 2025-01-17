@@ -23,7 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let rootVC = AuthViewController()
 		rootVC.view.backgroundColor = .green
 
-		window.rootViewController = rootVC
+		let navigationVC = UINavigationController(rootViewController: rootVC)
+
+		window.rootViewController = navigationVC
 		window.makeKeyAndVisible()
 	}
 
