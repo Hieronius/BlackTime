@@ -95,6 +95,14 @@ private extension AuthRootView {
 
 		// MARK: Password Recovery Screen
 
+		addSubview(resetPasswordVerticalStackView)
+
+		resetPasswordVerticalStackView.addArrangedSubviews([
+
+			resetPasswordEmailTextField,
+			confirmButton
+		])
+
 	}
 }
 
@@ -172,7 +180,22 @@ private extension AuthRootView {
 
 		// MARK: Password Recovery Screen
 
+		resetPasswordVerticalStackView.snp.makeConstraints { make in
 
+			make.centerY.equalToSuperview()
+			make.left.equalToSuperview().offset(20)
+			make.right.equalToSuperview().offset(-20)
+		}
+
+		resetPasswordEmailTextField.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
+
+		confirmButton.snp.makeConstraints { make in
+
+			make.height.equalTo(50)
+		}
 	}
 }
 
@@ -181,6 +204,8 @@ private extension AuthRootView {
 private extension AuthRootView {
 
 	func setupAppearance() {
+
+		// MARK: Login Screen
 
 		signInVerticalStackView.axis = .vertical
 		signInVerticalStackView.spacing = 8
@@ -246,7 +271,19 @@ private extension AuthRootView {
 
 		// MARK: Password Recovery Screen
 
+		resetPasswordVerticalStackView.axis = .vertical
+		resetPasswordVerticalStackView.spacing = 8
 
+		resetPasswordEmailTextField.backgroundColor = AppColors.secondaryColor
+		resetPasswordEmailTextField.tintColor = AppColors.primaryColor
+		resetPasswordEmailTextField.textColor = AppColors.primaryColor
+		resetPasswordEmailTextField.layer.cornerRadius = 15
+		resetPasswordEmailTextField.clipsToBounds = true
+
+		confirmButton.setTitleColor(AppColors.primaryColor, for: .normal)
+		confirmButton.backgroundColor = AppColors.actionColor
+		confirmButton.layer.cornerRadius = 15
+		confirmButton.clipsToBounds = true
 	}
 }
 
@@ -273,22 +310,22 @@ private extension AuthRootView {
 		signUpEmailTextField.rightView = cleaningButton
 		signUpEmailTextField.rightViewMode = .whileEditing
 		signUpEmailTextField.textContentType = .oneTimeCode
-//		signUpEmailTextField.isHidden = true
 
 		signUpPasswordTextField.rightView = cleaningButton
 		signUpPasswordTextField.rightViewMode = .whileEditing
 		signUpPasswordTextField.textContentType = .oneTimeCode
-//		signUpPasswordTextField.isHidden = true
 
 		signUpRepeatPasswordTextField.rightView = cleaningButton
 		signUpRepeatPasswordTextField.rightViewMode = .whileEditing
 		signUpRepeatPasswordTextField.textContentType = .oneTimeCode
-//		signUpPasswordTextField.isHidden = true
-
-//		createButton.isHidden = true
-
 
 		// MARK: Password Recovery Screen
+
+		resetPasswordVerticalStackView.isHidden = true
+
+		resetPasswordEmailTextField.rightView = cleaningButton
+		resetPasswordEmailTextField.rightViewMode = .whileEditing
+		resetPasswordEmailTextField.textContentType = .oneTimeCode
 	}
 }
 
@@ -320,8 +357,11 @@ private extension AuthRootView {
 
 		createButton.setTitle("Create", for: .normal)
 
-
 		// MARK: Password Recovery Screen
+
+		resetPasswordEmailTextField.placeholder = " Email@company.com"
+
+		confirmButton.setTitle("Confirm", for: .normal)
 	}
 }
 
