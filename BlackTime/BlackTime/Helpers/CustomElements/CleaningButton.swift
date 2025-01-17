@@ -18,7 +18,7 @@ final class CleaningButton: UIButton {
 
 	private func setupCleaningButton() {
 		setImage(UIImage(systemName: "delete.left.fill"), for: .normal)
-		tintColor = .black
+		tintColor = AppColors.primaryColor
 		widthAnchor.constraint(equalToConstant: 30).isActive = true
 		addTarget(self, action: #selector(clearTextField(sender: )), for: .touchUpInside)
 	}
@@ -28,6 +28,4 @@ final class CleaningButton: UIButton {
 			textField.text = ""
 		}
 	}
-
-
 }
