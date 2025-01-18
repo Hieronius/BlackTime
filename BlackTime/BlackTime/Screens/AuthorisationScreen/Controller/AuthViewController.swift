@@ -37,7 +37,7 @@ private extension AuthViewController {
 
 		let changeModeButton = UIBarButtonItem(
 
-			image: UIImage(systemName: "gear"),
+			image: UIImage(systemName: "line.3.horizontal"),
 			style: .plain,
 			target: self,
 			action: #selector(changeMode)
@@ -50,17 +50,30 @@ private extension AuthViewController {
 	@objc func changeMode() {
 
 		switch authMode {
+
 		case .login:
+
 			authMode = .registration
 			title = "Registration"
+			rootView.signInVerticalStackView.isHidden = true
+			rootView.resetPasswordButton.isHidden = true
+			rootView.signUpVerticalStackView.isHidden = false
+
 		case .registration:
+
 			authMode = .passwordRecovery
 			title = "Password Recovery"
+			rootView.signUpVerticalStackView.isHidden = true
+			rootView.resetPasswordVerticalStackView.isHidden = false
+
 		case .passwordRecovery:
+
 			title = "Login"
 			authMode = .login
+			rootView.resetPasswordVerticalStackView.isHidden = true
+			rootView.signInVerticalStackView.isHidden = false
+			rootView.resetPasswordButton.isHidden = false
 		}
-		print("Switch Mode")
 	}
 }
 
