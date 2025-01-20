@@ -21,9 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let window else { return }
 
 		let rootVC = AuthViewController()
-		rootVC.view.backgroundColor = .green
+		rootVC.view.backgroundColor = AppColors.primaryColor
 
 		let navigationVC = UINavigationController(rootViewController: rootVC)
+		navigationVC.navigationBar.prefersLargeTitles = true
 
 		window.rootViewController = navigationVC
 		window.makeKeyAndVisible()
