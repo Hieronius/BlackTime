@@ -1,8 +1,9 @@
 import UIKit
-import SnapKit
 
-/// Authorisation screen which responsible for Registration, Password recovery and LoginIn functions
+/// `Authorisation screen` which responsible for Registration, Password recovery and LoginIn functions
 final class AuthViewController: GenericViewController<AuthRootView> {
+
+	// MARK: Private Properties
 
 	/// Type of the screen user would see accordingly to the login stage
 	private var authMode: AuthMode = .login {
@@ -13,6 +14,19 @@ final class AuthViewController: GenericViewController<AuthRootView> {
 
 	/// Property to store current user's session state to process a new operations or to load the old ones
 	private var isInitialAppLaunch = true
+
+	// MARK: - Initialization
+
+	init() {
+		super.init(nibName: nil, bundle: nil)
+		rootView.backgroundColor = AppColors.primaryColor
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	// MARK: - Life Cycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,6 +59,18 @@ private extension AuthViewController {
 
 		changeModeButton.tintColor = AppColors.actionColor
 		navigationItem.leftBarButtonItem = changeModeButton
+
+		let toMainScreenButton = UIBarButtonItem(
+
+			image: UIImage(systemName: "chevron.right"),
+			style: .plain,
+			target: self,
+			action: #selector(moveToMain)
+
+			)
+
+		toMainScreenButton.tintColor = AppColors.actionColor
+		navigationItem.rightBarButtonItem = toMainScreenButton
 	}
 
 	@objc func changeMode() {
@@ -74,6 +100,11 @@ private extension AuthViewController {
 			rootView.signInVerticalStackView.isHidden = false
 			rootView.resetPasswordButton.isHidden = false
 		}
+	}
+
+	@objc func moveToMain() {
+		let vc = MainViewController()
+		navigationController?.pushViewController(vc, animated: true)
 	}
 }
 
