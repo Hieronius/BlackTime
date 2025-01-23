@@ -4,6 +4,9 @@ import SideMenu
 /// `Main Screen` to display current day's statistic and existing time to spend
 final class MainViewController: GenericViewController<MainRootView> {
 
+	// MARK: - Properties
+
+
 	// MARK: - Initialization
 
 	init() {
@@ -22,6 +25,7 @@ final class MainViewController: GenericViewController<MainRootView> {
 		super.viewDidLoad()
 
 		setupNavigationBar()
+		setupSideMenu()
 	}
 }
 
@@ -57,17 +61,30 @@ private extension MainViewController {
 
 	@objc func toggleMenu() {
 
-		let menu = SideMenuNavigationController(rootViewController: self)
-		present(menu, animated: true, completion: nil)
-
-		// Open-close sandwich menu
+		guard let sideMenu = SideMenuManager.default.leftMenuNavigationController else { return }
+		present(sideMenu, animated: true, completion: nil)
 	}
 
 	@objc func toggleCalendar() {
 
 		// Open-close Calendar
 	}
+}
 
-	// actions for buttons
+// MARK: - Setup Side Menu
 
+private extension MainViewController {
+
+	func setupSideMenu() {
+
+		let menuVC = SideMenuViewController()
+		let sideMenu = SideMenuNavigationController(rootViewController: menuVC)
+
+		sideMenu.leftSide = true
+
+		SideMenuManager.default.leftMenuNavigationController = sideMenu
+
+		SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.view, forMenu: .left)
+		SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.view)
+	}
 }
