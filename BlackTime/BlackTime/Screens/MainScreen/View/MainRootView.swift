@@ -7,6 +7,7 @@ final class MainRootView: UIView {
 
 	init() {
 		super.init(frame: .zero)
+		backgroundColor = AppColors.primaryColor
 		print("got root view")
 	}
 

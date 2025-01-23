@@ -7,7 +7,6 @@ final class MainViewController: GenericViewController<MainRootView> {
 
 	init() {
 		super.init(nibName: nil, bundle: nil)
-		rootView.backgroundColor = AppColors.primaryColor
 
 		// pass dependencies there
 	}

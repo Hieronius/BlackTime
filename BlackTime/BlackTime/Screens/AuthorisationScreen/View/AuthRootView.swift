@@ -204,6 +204,8 @@ private extension AuthRootView {
 private extension AuthRootView {
 
 	func setupAppearance() {
+		
+		backgroundColor = AppColors.primaryColor
 
 		// MARK: Login Screen
 

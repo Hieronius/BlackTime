@@ -19,7 +19,6 @@ final class AuthViewController: GenericViewController<AuthRootView> {
 
 	init() {
 		super.init(nibName: nil, bundle: nil)
-		rootView.backgroundColor = AppColors.primaryColor
 	}
 
 	required init?(coder: NSCoder) {
@@ -31,10 +30,7 @@ final class AuthViewController: GenericViewController<AuthRootView> {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-	title = "Login Screen"
-
-		// To avoid lags with animations when we launch our app
-		rootView.backgroundColor = AppColors.primaryColor
+		title = "Login Screen"
 
 		setupNavigationBar()
 
@@ -104,7 +100,7 @@ private extension AuthViewController {
 
 	@objc func moveToMain() {
 		let vc = MainViewController()
-		navigationController?.pushViewController(vc, animated: true)
+		navigationController?.setViewControllers([vc], animated: true)
 	}
 }
 
