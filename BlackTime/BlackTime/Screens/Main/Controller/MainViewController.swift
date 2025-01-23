@@ -1,4 +1,5 @@
 import UIKit
+import SideMenu
 
 /// `Main Screen` to display current day's statistic and existing time to spend
 final class MainViewController: GenericViewController<MainRootView> {
@@ -55,6 +56,9 @@ private extension MainViewController {
 	}
 
 	@objc func toggleMenu() {
+
+		let menu = SideMenuNavigationController(rootViewController: self)
+		present(menu, animated: true, completion: nil)
 
 		// Open-close sandwich menu
 	}
