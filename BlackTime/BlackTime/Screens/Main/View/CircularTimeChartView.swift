@@ -1,7 +1,9 @@
 import UIKit
 
 /// Custom View to display a chart with remaining hours and time spending categories
-final class CircularTimeView: UIView {
+final class CircularTimeChartView: UIView {
+
+	// Reuse for statistics as well
 
 	private var trackLayers: [CAShapeLayer] = []
 	
