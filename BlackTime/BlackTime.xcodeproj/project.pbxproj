@@ -7,25 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD42E04D2D3A05DC00A06F35 /* UIStackView + ArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42E04C2D3A05DC00A06F35 /* UIStackView + ArrangedSubviews.swift */; };
+		DD42E04F2D3A061F00A06F35 /* UIView + addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42E04E2D3A061F00A06F35 /* UIView + addSubviews.swift */; };
+		DD42E0512D3A141700A06F35 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42E0502D3A141700A06F35 /* CustomTextField.swift */; };
+		DDA9FCEB2D41F1DB005FB345 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCEA2D41F1DB005FB345 /* MainViewController.swift */; };
+		DDA9FCED2D41F1E5005FB345 /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCEC2D41F1E5005FB345 /* MainRootView.swift */; };
+		DDA9FCF02D4200A9005FB345 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DDA9FCEF2D4200A9005FB345 /* SideMenu */; };
+		DDA9FCF62D420983005FB345 /* SideMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCF52D420983005FB345 /* SideMenuRootView.swift */; };
+		DDA9FCF82D420AF1005FB345 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCF72D420AF1005FB345 /* SideMenuViewController.swift */; };
+		DDA9FCFA2D421E8E005FB345 /* TimeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCF92D421E8E005FB345 /* TimeCategory.swift */; };
+		DDA9FCFC2D421FEF005FB345 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCFB2D421FEF005FB345 /* TimeTracker.swift */; };
+		DDA9FCFE2D42207A005FB345 /* CircularTimeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9FCFD2D42207A005FB345 /* CircularTimeChartView.swift */; };
 		DDB6A8932D33706E0029B8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8922D33706E0029B8F1 /* AppDelegate.swift */; };
 		DDB6A8952D33706E0029B8F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8942D33706E0029B8F1 /* SceneDelegate.swift */; };
-		DDB6A8972D33706E0029B8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8962D33706E0029B8F1 /* ViewController.swift */; };
+		DDB6A8972D33706E0029B8F1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8962D33706E0029B8F1 /* AuthViewController.swift */; };
 		DDB6A89C2D3370730029B8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB6A89B2D3370730029B8F1 /* Assets.xcassets */; };
 		DDB6A89F2D3370730029B8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB6A89D2D3370730029B8F1 /* LaunchScreen.storyboard */; };
 		DDB6A8B32D3378C90029B8F1 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */; };
 		DDB6A8B62D337A1D0029B8F1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDB6A8B52D337A1D0029B8F1 /* SnapKit */; };
+		DDB6A8B82D337C9E0029B8F1 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8B72D337C9E0029B8F1 /* AppColors.swift */; };
+		DDB6A8BA2D337DE30029B8F1 /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8B92D337DE30029B8F1 /* UIColor + Hex.swift */; };
+		DDB6A8BC2D337E010029B8F1 /* UIColor + RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8BB2D337E010029B8F1 /* UIColor + RGB.swift */; };
+		DDB6A8BE2D3385E20029B8F1 /* CleaningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8BD2D3385E20029B8F1 /* CleaningButton.swift */; };
+		DDB6A8C02D3386680029B8F1 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8BF2D3386680029B8F1 /* EmailValidation.swift */; };
+		DDB6A8C22D338A890029B8F1 /* AuthMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8C12D338A890029B8F1 /* AuthMode.swift */; };
+		DDB6A8C42D338BBF0029B8F1 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB6A8C32D338BBF0029B8F1 /* AuthRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD42E04C2D3A05DC00A06F35 /* UIStackView + ArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + ArrangedSubviews.swift"; sourceTree = "<group>"; };
+		DD42E04E2D3A061F00A06F35 /* UIView + addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + addSubviews.swift"; sourceTree = "<group>"; };
+		DD42E0502D3A141700A06F35 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DDA9FCEA2D41F1DB005FB345 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DDA9FCEC2D41F1E5005FB345 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
+		DDA9FCF52D420983005FB345 /* SideMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootView.swift; sourceTree = "<group>"; };
+		DDA9FCF72D420AF1005FB345 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		DDA9FCF92D421E8E005FB345 /* TimeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCategory.swift; sourceTree = "<group>"; };
+		DDA9FCFB2D421FEF005FB345 /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
+		DDA9FCFD2D42207A005FB345 /* CircularTimeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimeChartView.swift; sourceTree = "<group>"; };
 		DDB6A88F2D33706E0029B8F1 /* BlackTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB6A8922D33706E0029B8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB6A8942D33706E0029B8F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDB6A8962D33706E0029B8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDB6A8962D33706E0029B8F1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		DDB6A89B2D3370730029B8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB6A89E2D3370730029B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB6A8A02D3370730029B8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB6A8A72D33772D0029B8F1 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		DDB6A8B72D337C9E0029B8F1 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		DDB6A8B92D337DE30029B8F1 /* UIColor + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
+		DDB6A8BB2D337E010029B8F1 /* UIColor + RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + RGB.swift"; sourceTree = "<group>"; };
+		DDB6A8BD2D3385E20029B8F1 /* CleaningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleaningButton.swift; sourceTree = "<group>"; };
+		DDB6A8BF2D3386680029B8F1 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		DDB6A8C12D338A890029B8F1 /* AuthMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMode.swift; sourceTree = "<group>"; };
+		DDB6A8C32D338BBF0029B8F1 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA9FCF02D4200A9005FB345 /* SideMenu in Frameworks */,
 				DDB6A8B62D337A1D0029B8F1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +76,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD42E0522D3A143200A06F35 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */,
+				DDB6A8BD2D3385E20029B8F1 /* CleaningButton.swift */,
+				DD42E0502D3A141700A06F35 /* CustomTextField.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		DDA9FCE62D41F1B6005FB345 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCF92D421E8E005FB345 /* TimeCategory.swift */,
+				DDA9FCFB2D421FEF005FB345 /* TimeTracker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDA9FCE72D41F1B9005FB345 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCEC2D41F1E5005FB345 /* MainRootView.swift */,
+				DDA9FCFD2D42207A005FB345 /* CircularTimeChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDA9FCE92D41F1CA005FB345 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCEA2D41F1DB005FB345 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDA9FCF12D420958005FB345 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCF22D420960005FB345 /* Model */,
+				DDA9FCF32D420965005FB345 /* View */,
+				DDA9FCF42D420968005FB345 /* Controller */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		DDA9FCF22D420960005FB345 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDA9FCF32D420965005FB345 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCF52D420983005FB345 /* SideMenuRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDA9FCF42D420968005FB345 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FCF72D420AF1005FB345 /* SideMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DDB6A8862D33706E0029B8F1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +185,13 @@
 		DDB6A8A82D3377B30029B8F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDB6A8B22D3378C90029B8F1 /* GenericViewController.swift */,
+				DD42E0522D3A143200A06F35 /* CustomElements */,
+				DDB6A8B72D337C9E0029B8F1 /* AppColors.swift */,
+				DDB6A8B92D337DE30029B8F1 /* UIColor + Hex.swift */,
+				DDB6A8BB2D337E010029B8F1 /* UIColor + RGB.swift */,
+				DDB6A8BF2D3386680029B8F1 /* EmailValidation.swift */,
+				DD42E04C2D3A05DC00A06F35 /* UIStackView + ArrangedSubviews.swift */,
+				DD42E04E2D3A061F00A06F35 /* UIView + addSubviews.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -100,8 +211,9 @@
 		DDB6A8AA2D3377C10029B8F1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DDB6A8AD2D33783F0029B8F1 /* AuthorisationScreen */,
-				DDB6A8AE2D3378490029B8F1 /* MainScreen */,
+				DDA9FCF12D420958005FB345 /* SideMenu */,
+				DDB6A8AD2D33783F0029B8F1 /* Authorisation */,
+				DDB6A8AE2D3378490029B8F1 /* Main */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -120,26 +232,30 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		DDB6A8AD2D33783F0029B8F1 /* AuthorisationScreen */ = {
+		DDB6A8AD2D33783F0029B8F1 /* Authorisation */ = {
 			isa = PBXGroup;
 			children = (
 				DDB6A8AF2D3378630029B8F1 /* Model */,
 				DDB6A8B02D3378680029B8F1 /* View */,
 				DDB6A8B12D33786B0029B8F1 /* Controller */,
 			);
-			path = AuthorisationScreen;
+			path = Authorisation;
 			sourceTree = "<group>";
 		};
-		DDB6A8AE2D3378490029B8F1 /* MainScreen */ = {
+		DDB6A8AE2D3378490029B8F1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DDA9FCE62D41F1B6005FB345 /* Model */,
+				DDA9FCE72D41F1B9005FB345 /* View */,
+				DDA9FCE92D41F1CA005FB345 /* Controller */,
 			);
-			path = MainScreen;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		DDB6A8AF2D3378630029B8F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDB6A8C12D338A890029B8F1 /* AuthMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +263,7 @@
 		DDB6A8B02D3378680029B8F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDB6A8C32D338BBF0029B8F1 /* AuthRootView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,7 +271,7 @@
 		DDB6A8B12D33786B0029B8F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DDB6A8962D33706E0029B8F1 /* ViewController.swift */,
+				DDB6A8962D33706E0029B8F1 /* AuthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +294,7 @@
 			name = BlackTime;
 			packageProductDependencies = (
 				DDB6A8B52D337A1D0029B8F1 /* SnapKit */,
+				DDA9FCEF2D4200A9005FB345 /* SideMenu */,
 			);
 			productName = BlackTime;
 			productReference = DDB6A88F2D33706E0029B8F1 /* BlackTime.app */;
@@ -208,6 +326,7 @@
 			mainGroup = DDB6A8862D33706E0029B8F1;
 			packageReferences = (
 				DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DDA9FCEE2D4200A8005FB345 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = DDB6A8902D33706E0029B8F1 /* Products */;
 			projectDirPath = "";
@@ -235,10 +354,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB6A8972D33706E0029B8F1 /* ViewController.swift in Sources */,
+				DD42E0512D3A141700A06F35 /* CustomTextField.swift in Sources */,
+				DDA9FCFA2D421E8E005FB345 /* TimeCategory.swift in Sources */,
+				DDA9FCED2D41F1E5005FB345 /* MainRootView.swift in Sources */,
+				DDA9FCFC2D421FEF005FB345 /* TimeTracker.swift in Sources */,
+				DDB6A8972D33706E0029B8F1 /* AuthViewController.swift in Sources */,
+				DDB6A8C42D338BBF0029B8F1 /* AuthRootView.swift in Sources */,
 				DDB6A8932D33706E0029B8F1 /* AppDelegate.swift in Sources */,
+				DDB6A8BC2D337E010029B8F1 /* UIColor + RGB.swift in Sources */,
+				DDB6A8C02D3386680029B8F1 /* EmailValidation.swift in Sources */,
 				DDB6A8B32D3378C90029B8F1 /* GenericViewController.swift in Sources */,
+				DDB6A8C22D338A890029B8F1 /* AuthMode.swift in Sources */,
+				DD42E04F2D3A061F00A06F35 /* UIView + addSubviews.swift in Sources */,
+				DDA9FCEB2D41F1DB005FB345 /* MainViewController.swift in Sources */,
+				DD42E04D2D3A05DC00A06F35 /* UIStackView + ArrangedSubviews.swift in Sources */,
+				DDB6A8BE2D3385E20029B8F1 /* CleaningButton.swift in Sources */,
+				DDA9FCFE2D42207A005FB345 /* CircularTimeChartView.swift in Sources */,
+				DDA9FCF62D420983005FB345 /* SideMenuRootView.swift in Sources */,
+				DDB6A8B82D337C9E0029B8F1 /* AppColors.swift in Sources */,
 				DDB6A8952D33706E0029B8F1 /* SceneDelegate.swift in Sources */,
+				DDA9FCF82D420AF1005FB345 /* SideMenuViewController.swift in Sources */,
+				DDB6A8BA2D337DE30029B8F1 /* UIColor + Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +594,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DDA9FCEE2D4200A8005FB345 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -469,6 +613,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DDA9FCEF2D4200A9005FB345 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDA9FCEE2D4200A8005FB345 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
 		DDB6A8B52D337A1D0029B8F1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDB6A8B42D337A1D0029B8F1 /* XCRemoteSwiftPackageReference "SnapKit" */;

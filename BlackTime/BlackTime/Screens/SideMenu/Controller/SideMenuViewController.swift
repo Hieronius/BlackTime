@@ -17,5 +17,6 @@ final class SideMenuViewController: GenericViewController<SideMenuRootView> {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print("Got SideMenu")
 	}
 }
