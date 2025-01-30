@@ -1,11 +1,16 @@
 import Foundation
 
+// MARK: TODO - Refactor accordingly to dependency injection
 /// Model for managing time categories and remaining hours
 final class TimeTracker {
+
 	var categories: [TimeCategory] = [
-		TimeCategory(name: "Cleaning", color: .systemBlue, hours: 0),
-		TimeCategory(name: "Working", color: .systemGreen, hours: 0),
-		TimeCategory(name: "Resting", color: .systemOrange, hours: 0)
+		TimeCategory(name: "Cleaning", color: .systemBlue, hours: 1),
+		TimeCategory(name: "Working", color: .systemGreen, hours: 2),
+		TimeCategory(name: "SelfDevelopment", color: .systemOrange, hours: 3),
+		TimeCategory(name: "Cooking", color: .systemYellow, hours: 4),
+		TimeCategory(name: "Other", color: .systemRed, hours: 5),
+		TimeCategory(name: "Resting", color: .systemBrown, hours: 6)
 	]
 
 	var remainingHours: Double {
