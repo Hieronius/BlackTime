@@ -1,11 +1,13 @@
 import UIKit
+import SnapKit
 
 /// Custom View to display a chart with remaining hours and time spending categories
 final class CircularTimeChartView: UIView {
 
-	// Reuse for statistics as well
+	// MARK: - Properties
 
 	private var trackLayers: [CAShapeLayer] = []
+	private let centerLabel = UILabel()
 	
 	var categories: [TimeCategory] = [] {
 		didSet {
@@ -13,12 +15,82 @@ final class CircularTimeChartView: UIView {
 		}
 	}
 
+	var remainingHours: Double = 0 {
+		didSet {
+			updateCenterLabel()
+		}
+	}
+
+	// MARK: - Initialization
+
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		embedViews()
+		setupLayout()
+		setupAppearance()
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	// MARK: - Layout
+
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		updateLayers()
 	}
+}
 
-	private func updateLayers() {
+// MARK: - Private Methods
+
+// MARK: - Embed Views
+
+private extension CircularTimeChartView {
+
+	func embedViews() {
+
+		addSubview(centerLabel)
+	}
+
+}
+
+// MARK: - Setup Layout
+
+private extension CircularTimeChartView {
+
+	func setupLayout() {
+
+		centerLabel.snp.makeConstraints { make in
+			make.centerX.equalToSuperview()
+			make.centerY.equalToSuperview()
+		}
+	}
+}
+
+// MARK: - Setup Appearance
+
+private extension CircularTimeChartView {
+
+	func setupAppearance() {
+
+		centerLabel.textAlignment = .center
+		centerLabel.font = .systemFont(ofSize: 24, weight: .bold)
+		centerLabel.textColor = AppColors.actionColor
+	}
+}
+
+// MARK: - Setup Behaviour
+
+private extension CircularTimeChartView {
+
+	func updateCenterLabel() {
+
+		centerLabel.text = "\(remainingHours) hours"
+	}
+
+	// MARK: TODO - Provide Documentation
+	func updateLayers() {
 		// Remove old layers
 		trackLayers.forEach { $0.removeFromSuperlayer() }
 		trackLayers.removeAll()
