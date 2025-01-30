@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 import SideMenu
 
 /// `Main Screen` to display current day's statistic and existing time to spend
@@ -6,13 +7,14 @@ final class MainViewController: GenericViewController<MainRootView> {
 
 	// MARK: - Properties
 
+	let timeTracker = TimeTracker()
+
 
 	// MARK: - Initialization
 
 	init() {
 		super.init(nibName: nil, bundle: nil)
 
-		// pass dependencies there
 	}
 
 	required init?(coder: NSCoder) {
@@ -24,8 +26,10 @@ final class MainViewController: GenericViewController<MainRootView> {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		rootView.timeChartView.backgroundColor = .black
 		setupNavigationBar()
 		setupSideMenu()
+		updateTimeCharView()
 	}
 }
 
@@ -86,5 +90,48 @@ private extension MainViewController {
 
 		SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.view, forMenu: .left)
 		SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.view)
+	}
+}
+
+// MARK: - Setup timeChartView
+
+private extension MainViewController {
+
+	private func updateTimeCharView() {
+
+		rootView.timeChartView.categories = timeTracker.categories
+		rootView.timeChartView.remainingHours = timeTracker.remainingHours
+	}
+
+	func setupControls() {
+
+		let stack = UIStackView()
+		stack.axis = .vertical
+		stack.spacing = 8
+
+		for category in timeTracker.categories {
+			let button = UIButton()
+			button.setTitle("Add 1h to \(category.name)", for: .normal)
+			button.backgroundColor = category.color
+			button.addTarget(self, action: #selector(didTapAddHour(_:)), for: .touchUpInside)
+			stack.addArrangedSubview(button)
+		}
+
+		rootView.addSubview(stack)
+
+		stack.snp.makeConstraints { make in
+			make.centerX.equalToSuperview()
+			make.top.equalTo(rootView.timeChartView.snp.bottom).offset(40)
+		}
+	}
+
+	@objc func didTapAddHour(_ sender: UIButton) {
+
+		guard let title = sender.titleLabel?.text,
+			  let categoryName = title.components(separatedBy: " ").last else { return }
+
+		timeTracker.addHours(1, to: categoryName)
+
+		updateTimeCharView()
 	}
 }
