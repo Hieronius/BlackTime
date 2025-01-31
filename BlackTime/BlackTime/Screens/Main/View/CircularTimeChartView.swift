@@ -75,7 +75,7 @@ private extension CircularTimeChartView {
 	func setupAppearance() {
 
 		centerLabel.textAlignment = .center
-		centerLabel.font = .systemFont(ofSize: 24, weight: .bold)
+		centerLabel.font = .systemFont(ofSize: 48, weight: .bold)
 		centerLabel.textColor = AppColors.actionColor
 	}
 }
@@ -122,6 +122,12 @@ private extension CircularTimeChartView {
 			trackLayers.append(layer)
 
 			startAngle = endAngle
+
+			let animation = CABasicAnimation(keyPath: "strokeEnd")
+			animation.fromValue = 0
+			animation.toValue = 1
+			animation.duration = 0.5
+			layer.add(animation, forKey: "strokeAnimation")
 		}
 	}
 }
