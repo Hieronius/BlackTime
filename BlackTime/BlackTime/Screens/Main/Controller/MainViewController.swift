@@ -26,10 +26,10 @@ final class MainViewController: GenericViewController<MainRootView> {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		rootView.timeChartView.backgroundColor = .black
 		setupNavigationBar()
 		setupSideMenu()
 		updateTimeCharView()
+		setupControls()
 	}
 }
 
