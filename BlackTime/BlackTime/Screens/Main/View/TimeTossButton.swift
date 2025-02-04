@@ -6,6 +6,12 @@ final class TimeTossButton: UIButton {
 
 	// MARK: - Properties
 
+	/// A menu of time spending categories becomes visible when you drag `TimeTossButton`
+	let radialMenu = RadialMenuView()
+
+	/// An options list to choose time interval for a new time spending operation. Becomes visible when you tap `TimeTossButton`
+	let optionsList = OptionsListView()
+
 	/// List of time spending categories can be seen on the screen
 	var isCategoriesVisible = false
 
@@ -14,14 +20,19 @@ final class TimeTossButton: UIButton {
 
 	/// Property to track when user dragged the "coin"
 	var isDragging = false
-
-	let radialMenuView = UIView()
 	
 
 	// MARK: - Initialization
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+
+		embedViews()
+		setupLayout()
+		setupAppearance()
+		setupData()
+		setupBehaviour()
+
 	}
 
 	required init?(coder: NSCoder) {
@@ -33,46 +44,98 @@ final class TimeTossButton: UIButton {
 
 // MARK: - Embed Views
 
-private extension MainRootView {
+private extension TimeTossButton {
 
 	func embedViews() {
 
+		addSubview(radialMenu)
+		addSubview(optionsList)
 	}
 }
 
 // MARK: - Setup Layout
 
-private extension MainRootView {
+private extension TimeTossButton {
 
 	func setupLayout() {
+
+		snp.makeConstraints { make in
+			make.height.equalTo(50)
+			make.width.equalTo(50)
+		}
+
 
 	}
 }
 
 // MARK: - Setup Appearance
 
-private extension MainRootView {
+private extension TimeTossButton {
 
 	func setupAppearance() {
+
+		setTitleColor(AppColors.primaryColor, for: .normal)
+		backgroundColor = AppColors.actionColor
+		layer.cornerRadius = 25
+		clipsToBounds = true
 
 	}
 }
 
 // MARK: - Setup Data
 
-private extension MainRootView {
+private extension TimeTossButton {
 
 	func setupData() {
-
+		setTitle("+", for: .normal)
 	}
 }
 
 // MARK: - Setup Behaviour
 
-private extension MainRootView {
+private extension TimeTossButton {
 
 	func setupBehaviour() {
 
+		radialMenu.isHidden = true
+		optionsList.isHidden = true
+
+		addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+		addTarget(self, action: #selector(buttonDragged), for: .touchDragInside)
+
+
+	}
+
+	@objc func buttonTapped() {
+
+		if isDragging {
+			// Implement the check if the button is in radial menu borders
+			isDragging = false
+			print("dropped the coin")
+
+		} else {
+
+			if optionsList.isHidden {
+				optionsList.isHidden = false
+				print("optionsList is visible")
+			} else {
+				optionsList.isHidden = true
+				print("optionsList is hidden")
+			}
+		}
+	}
+
+	@objc func buttonDragged() {
+		isDragging = true
+
+		if isDragging {
+			radialMenu.isHidden = false
+			print("radial menu is visible")
+		} else {
+			radialMenu.isHidden = true
+			print("radial menu is hidden")
+		}
 	}
 }
 
@@ -116,9 +179,6 @@ class CustomButton: UIButton {
 		let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
 		self.addGestureRecognizer(panGesture)
 
-		// Add long press gesture
-		let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-		self.addGestureRecognizer(longPressGesture)
 	}
 
 	@objc private func buttonTapped() {
