@@ -26,12 +26,15 @@ final class MainViewController: GenericViewController<MainRootView> {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		navigationController?.interactivePopGestureRecognizer?.delegate = self
 		setupNavigationBar()
 		setupSideMenu()
 		updateTimeCharView()
-		setupControls()
+		rootView.radialMenu.setupMenu(categories: timeTracker.categories)
 	}
 }
+
+// MARK: - Private Methods
 
 // MARK: - Setup Navigation Bar
 
@@ -102,36 +105,13 @@ private extension MainViewController {
 		rootView.timeChartView.categories = timeTracker.categories
 		rootView.timeChartView.remainingHours = timeTracker.remainingHours
 	}
+}
 
-	func setupControls() {
+// MARK: - UIGestureRecognizerDelegate
 
-		let stack = UIStackView()
-		stack.axis = .vertical
-		stack.spacing = 8
-
-		for category in timeTracker.categories {
-			let button = UIButton()
-			button.setTitle("Add 1h to \(category.name)", for: .normal)
-			button.backgroundColor = category.color
-			button.addTarget(self, action: #selector(didTapAddHour(_:)), for: .touchUpInside)
-			stack.addArrangedSubview(button)
-		}
-
-		rootView.addSubview(stack)
-
-		stack.snp.makeConstraints { make in
-			make.centerX.equalToSuperview()
-			make.top.equalTo(rootView.timeChartView.snp.bottom).offset(40)
-		}
-	}
-
-	@objc func didTapAddHour(_ sender: UIButton) {
-
-		guard let title = sender.titleLabel?.text,
-			  let categoryName = title.components(separatedBy: " ").last else { return }
-
-		timeTracker.addHours(1, to: categoryName)
-
-		updateTimeCharView()
+extension MainViewController: UIGestureRecognizerDelegate {
+	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+						   shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool {
+		return true  // Allow simultaneous recognition
 	}
 }
