@@ -7,8 +7,10 @@ enum AppColors {
 	static let primaryColor = UIColor.init(hex: "#000000")
 
 	/// Secondary color for subviews and contrainers
-	static let secondaryColor = UIColor.init(hex: "#7D7D7D")
+	static let secondaryColor = UIColor.init(hex: "#202020") // secondActionColor
 
 	/// Main color for buttons, actions, menues
 	static let actionColor = UIColor.init(hex: "#FFFFFF")
+	static let secondActionColor = UIColor.init(hex: "#7D7D7D") // secondaryColor
+	static let thirdActionColor = UIColor.init(hex: "#EEE5FE)")
 }
