@@ -6,7 +6,14 @@ final class MainRootView: UIView {
 
 	// MARK: - Properties
 
+	/// Custom View to display daily time spending and remaining time
 	let timeChartView = CircularTimeChartView()
+
+	/// Button to drag and drop a new time spending operation
+	let tossButton = TimeTossButton()
+
+	/// Radial menu with time spending categories
+	let radialMenu = RadialMenuView(categories: [])
 
 	// MARK: - Initialization
 
@@ -35,6 +42,9 @@ private extension MainRootView {
 	func embedViews() {
 
 		addSubview(timeChartView)
+		addSubview(radialMenu)
+
+		addSubview(tossButton)
 	}
 }
 
@@ -49,6 +59,16 @@ private extension MainRootView {
 			make.height.equalTo(300)
 			make.center.equalToSuperview()
 		}
+
+		tossButton.snp.makeConstraints { make in
+			make.bottom.equalTo(safeAreaLayoutGuide).offset(-60)
+			make.right.equalTo(safeAreaLayoutGuide).offset(-20)
+		}
+
+		radialMenu.snp.makeConstraints { make in
+			make.center.equalTo(tossButton)
+			make.width.height.equalTo(200)
+		}
 	}
 }
 
@@ -59,7 +79,8 @@ private extension MainRootView {
 	func setupAppearance() {
 
 		backgroundColor = AppColors.primaryColor
-
+		timeChartView.backgroundColor = AppColors.primaryColor
+		radialMenu.isHidden = false
 	}
 }
 
@@ -68,7 +89,7 @@ private extension MainRootView {
 private extension MainRootView {
 
 	func setupData() {
-
+		
 	}
 }
 
