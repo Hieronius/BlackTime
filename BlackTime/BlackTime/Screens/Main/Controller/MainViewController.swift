@@ -31,7 +31,13 @@ final class MainViewController: GenericViewController<MainRootView> {
 		setupSideMenu()
 		updateTimeCharView()
 		rootView.radialMenu.setupMenu(categories: timeTracker.categories)
+		rootView.tossButton.radialMenu = rootView.radialMenu  // Inject radialMenu dependency
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			self.rootView.radialMenu.originalCenter = self.rootView.tossButton.originalPosition
+			print(self.rootView.radialMenu.originalCenter)
+		}
 	}
+
 }
 
 // MARK: - Private Methods
