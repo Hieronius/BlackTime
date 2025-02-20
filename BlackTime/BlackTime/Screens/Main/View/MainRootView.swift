@@ -15,6 +15,9 @@ final class MainRootView: UIView {
 	/// Radial menu with time spending categories
 	let radialMenu = RadialMenuView(categories: [])
 
+	/// Original position of the `TossButton`
+	var tossButtonPosition: CGPoint = CGPoint(x: 250, y: 250)
+
 	// MARK: - Initialization
 
 	init() {
@@ -31,6 +34,22 @@ final class MainRootView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+
+		// Convert button's original position to our coordinate system
+		DispatchQueue.main.asyncAfter(deadline: .now(
+		) + 1) {
+			let convertedPosition = self.convert(self.tossButton.originalPosition, from: self.tossButton.superview)
+			self.radialMenu.center = convertedPosition
+			print(self.radialMenu.center)
+		}
+
+//		radialMenu.center = tossButtonPosition
+	}
+
+	
 }
 
 // MARK: - Private Methods
@@ -65,6 +84,7 @@ private extension MainRootView {
 			make.right.equalTo(safeAreaLayoutGuide).offset(-20)
 		}
 
+		// MARK: BE READY TO GET BACK
 		radialMenu.snp.makeConstraints { make in
 			make.center.equalTo(tossButton)
 			make.width.height.equalTo(200)
@@ -80,7 +100,7 @@ private extension MainRootView {
 
 		backgroundColor = AppColors.primaryColor
 		timeChartView.backgroundColor = AppColors.primaryColor
-		radialMenu.isHidden = false
+		radialMenu.isHidden = true
 	}
 }
 
